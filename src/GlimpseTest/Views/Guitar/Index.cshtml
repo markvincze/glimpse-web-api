@@ -1,0 +1,18 @@
+﻿@model IEnumerable<GlimpseTest.Models.Manufacturer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Guitars</h2>
+
+<div>
+    @foreach (var manufacturer in Model)
+    {
+        <h4>
+            @Html.DisplayFor(modelItem => manufacturer.Name)
+        </h4>
+
+        @Html.Partial("~/Views/Shared/DisplayTemplates/Guitars.cshtml", manufacturer.Models);
+    }
+</div>
